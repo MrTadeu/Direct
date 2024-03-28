@@ -1,0 +1,1 @@
+g++ main.cpp -o main.exe -lgdi32 -lXinput
