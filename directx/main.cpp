@@ -524,11 +524,7 @@ int CALLBACK WinMain(HINSTANCE Instance, HINSTANCE PrevInstance, LPSTR ComandLin
 				{
 					DWORD ByteToLock = (SoundOutput.RunningSampleIndex * SoundOutput.BytesPerSample) % SoundOutput.SecondaryBufferSize;
 					DWORD BytesToWrite;
-					if (ByteToLock == PlayCursor)
-					{
-						BytesToWrite = 0;
-					}
-					else if (ByteToLock > PlayCursor)
+					if (ByteToLock > PlayCursor)
 					{
 						BytesToWrite = (SoundOutput.SecondaryBufferSize - ByteToLock);
 						BytesToWrite += PlayCursor;
